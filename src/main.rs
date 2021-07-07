@@ -131,7 +131,6 @@ async fn main() {
 	let hsts = matches.value_of("hsts");
     let port = env::var("PORT")
         .unwrap_or_else(|_| "8080".to_string())
-        .parse()
         .expect("PORT must be a number");
 
 	let listener = [address, ":", port].concat();
