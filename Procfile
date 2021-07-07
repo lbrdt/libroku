@@ -1,1 +1,1 @@
-web: ./target/release/libreddit -P $PORT -H 63115200
+web: ./target/release/libreddit -p $PORT -H 63115200
