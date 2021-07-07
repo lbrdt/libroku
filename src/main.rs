@@ -21,7 +21,6 @@ mod client;
 use client::proxy;
 use server::RequestExt;
 use utils::{error, redirect};
-use std::env;
 
 mod server;
 
@@ -128,8 +127,8 @@ async fn main() {
 		.get_matches();
 
 	let address = matches.value_of("address").unwrap_or("0.0.0.0");
+    let port = matches.value_of("port").unwrap_or("8080");
 	let hsts = matches.value_of("hsts");
-    let port = env::var("PORT");
 
 	let listener = [address, ":", port].concat();
 

@@ -1,1 +1,1 @@
-web: ./target/release/libreddit
+web: ./target/release/libreddit -P $PORT
