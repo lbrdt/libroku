@@ -21,6 +21,7 @@ mod client;
 use client::proxy;
 use server::RequestExt;
 use utils::{error, redirect};
+use std::env;
 
 mod server;
 
@@ -129,7 +130,7 @@ async fn main() {
 	let address = matches.value_of("address").unwrap_or("0.0.0.0");
 	let hsts = matches.value_of("hsts");
     let port = env::var("PORT")
-        .unwrap_or_else(|_| "3000".to_string())
+        .unwrap_or_else(|_| "8080".to_string())
         .parse()
         .expect("PORT must be a number");
 
